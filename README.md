@@ -20,14 +20,12 @@ Na camada web temos os campos de input **Game** , **Desenvolvedora** , **Genero*
 a Entidade **GamesModel** recebe os dados dos 3 primeiros inputs e + uma Lista de plataformas na qual é outra entidade (**PlataformaModel**), o relacionamento **@OneToMany**  
 e **@ManyToOne** faz com que liguemos essas classes por atributos especificos, com a junção do cascadeType.ALL a lista de plataformas é salva assim que salvamos um Game,  
 de forma "cascateada".  
-Para Salvarmos um Game precisamos informas os valores necessarios nos inputs e adicionar em um lista separada as plataformas, ou seja, digitamos uma plataformas e clicamos em "+",  
-digitamos outra e clicamos novamente em "+", e será percebido que uma outra lista é iterada logo abaixo só com as plataformas, após isso é só persistir clicando no botão "Cadastrar",  
-termos todas as plataformas listadas salvas e vinculadas ao ID do game, e clicando na **Lupa** poderemos ver o "Resumo" onde é possivel filtrar um resultado e até mesmo ver as plataformas setadas  
-anteriormente, tudo isso atravéz do **Dialog FrameWork** do **Primefaces**.
+Para Salvarmos um Game precisamos informar os valores necessários nos inputs e adicionar em uma lista separada as plataformas, ou seja, digitamos uma plataforma e clicamos em "+",  
+digitamos outra e clicamos novamente em "+", e será notado que uma outra lista é iterada logo abaixo só com as plataformas, após isso é só persistir clicando no botão "Cadastrar", teremos todas as plataformas listadas salvas e vinculadas ao ID do game, e clicando na **Lupa** poderemos ver o "Resumo" onde é possivel filtrar um resultado e até mesmo ver as plataformas setadas anteriormente, tudo isso atravéz do **Dialog FrameWork** do **Primefaces**.
 
 
 
-► Qualquer dúvida é só me entrar em contato via E-Mail **delsonsaint@hotmail.com** .  
+► Qualquer dúvida é só entrar em contato via E-Mail **delsonsaint@hotmail.com** .  
 
 
 
