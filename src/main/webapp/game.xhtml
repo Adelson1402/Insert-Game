@@ -6,7 +6,7 @@
 <h:head>
  <meta charset="UTF-8"/>
 </h:head>
-<p:messages id="msg" autoUpdate="true"/>
+<p:growl id="msg" autoUpdate="true"/>
 
 <h:body>
   <h:form id="form">
@@ -31,7 +31,7 @@
        <p:inputText  id="pl" value="#{gameMB.nomePlataforma}" placeholder="Insira a Plataforma" required="false" requiredMessage="É necessário inserir a Plataforma!"
         title="Insira plataforma Aqui!"/>
     
-    <p:commandButton icon="pi pi-plus" action="#{gameMB.adicionarPlataforma}" update="pl pTable">
+    <p:commandButton icon="pi pi-plus" action="#{gameMB.adicionarPlataforma}" update="pl msg pTable">
       <f:ajax execute="pl pTable" rendered="pl pTable"></f:ajax>
     </p:commandButton>
             
@@ -71,7 +71,7 @@
 </p:column>
 
 <p:column headerText="Remover">
-   <p:commandButton icon="pi pi-trash" action="#{gameMB.remove}" update="labelBusca" process="@this">
+   <p:commandButton icon="pi pi-trash" action="#{gameMB.remove}" update="labelBusca msg" process="@this">
     <f:setPropertyActionListener value="#{g}" target="#{gameMB.game}"/>
    </p:commandButton>
 </p:column>

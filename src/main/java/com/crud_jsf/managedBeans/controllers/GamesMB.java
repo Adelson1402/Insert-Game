@@ -45,11 +45,9 @@ public class GamesMB implements Serializable{
 	
 	private String nomePlataforma;
 	
-	
-	
-	
-	
 	private String findString;
+	
+	
 	
 	@PostConstruct
 	public void load() {
@@ -62,22 +60,14 @@ public class GamesMB implements Serializable{
 	public void adicionar() {
 	
 		System.out.println(plataformas);
-		
-		
 		try {
 		
-		  
 		  System.out.println("esse é um teste "+game.getPlataformas());
-		  
 			gameService.save(game);
-		
-			
-			game = new GamesModel();
-					
+			game = new GamesModel();	
 			load();
-			
-			
 			MessagesStruct.info("Game cadastrado com sucesso!");
+			
 		} catch (Exceptions e) {
 			MessagesStruct.warn(e.getMessage());
 		}
@@ -88,11 +78,7 @@ public class GamesMB implements Serializable{
 	public void remove() {
 		try {
 			gameService.delete(game);
-			
-			
-			
 			MessagesStruct.info(game.getNomeGame() + " foi removido com sucesso!");
-			
 			load();
 			
 		} catch (Exceptions e) {
@@ -103,11 +89,8 @@ public class GamesMB implements Serializable{
 	
 	
 	public void buscar(){
-		
 		System.out.println("buscando por " + findString);
 	    gamesList =  gameService.search(findString);
-	
-	
 	
 	}
 	
@@ -122,10 +105,12 @@ public class GamesMB implements Serializable{
 	}
 	
 	public void excluirPlataforma(PlataformaModel plataformaModel) {
-		
 		game.getPlataformas().remove(plataformaModel);
 		plataformaService.delete(plataformaModel);
 	}
+	
+	
+	
 	public String getFindString() {
 		return findString;
 	}
