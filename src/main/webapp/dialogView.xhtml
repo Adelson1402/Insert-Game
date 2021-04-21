@@ -1,0 +1,59 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+  <meta charset="UTF-8"/>
+  <style type="text/css">
+html {
+font-size: 14px;
+    }
+    </style>
+</h:head>
+
+<h:body>
+<h2 align="center">Resumo</h2>
+
+
+<h:form id="form">
+  <div class="p-col-12 p-md-4" >
+      <div class="ui-inputgroup">
+          <p:inputText placeholder="Procurar" value="#{gameMB.findString}" size="80"/>
+          <p:commandButton icon="pi pi-search" styleClass="ui-button-warning" action="#{gameMB.buscar}" update="labelBusca"/>
+      </div>
+  </div>
+  </h:form>
+   
+  <p:dataTable id="labelBusca" value="#{gameMB.gamesList}" var="g" border="1"
+ paginator="true" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+				  currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} Resultados"
+				  rowsPerPageTemplate="5,10,{ShowAll|'TODOS'}" stripedRows="true" autoUpdate="true" stickyTopAt=".layout-topbar" stickyHeader="true">
+				  
+				
+ <p:column headerText="Nome">
+   <p:outputLabel  value="#{g.nomeGame}"/>
+ </p:column>
+<p:column headerText="Genero">
+   <p:outputLabel value="#{g.genero}"/>
+</p:column>
+<p:column headerText="Desenvolvedora">
+   <p:outputLabel value="#{g.desenvolvedora}"/>
+</p:column>
+
+ <p:column headerText="Plataformas">
+   <p:orderList value="#{g.plataformas}" var="p" controlsLocation="none" itemLabel="#{p.nomePlataforma}" itemValue="#{p}" />
+ </p:column>
+
+</p:dataTable>
+
+
+</h:body>
+
+
+
+
+
+
+
+</html>
