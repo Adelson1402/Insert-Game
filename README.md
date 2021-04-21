@@ -13,7 +13,7 @@ O projeto tem como implementação um **Dao** Generico para fazer a persistênci
 classes de serviços mais "Limpas".  
 
 A entidade **GamesModel** é anotada com @Entity, fazendo com que as configurações pré-setadas no persistence.xml entrem em ação e crie a tabela no banco de dados.  
-já o banco de dados em si deve ser criado manualmente com a seguinte Query **[ CREATE DATABASE games_db; ]** a partir daí o hibernate cria as tabelas com esas anotações @Entity.  
+já o banco de dados em si deve ser criado manualmente com a seguinte Query **[ CREATE DATABASE games_db; ]** a partir daí o hibernate cria as tabelas com essas anotações @Entity.  
 ----------------------------------------------------------------///----------------------------------------------------------------
                   
 Na camada web temos os campos de input **Game** , **Desenvolvedora** , **Genero** , e **Plataformas** .  
