@@ -24,12 +24,12 @@ Para Salvarmos um Game precisamos informar os valores necessários nos inputs e 
 digitamos outra e clicamos novamente em "+", e será notado que uma outra lista é iterada logo abaixo só com as plataformas, após isso é só persistir clicando no botão "Cadastrar", teremos todas as plataformas listadas salvas e vinculadas ao ID do game, e clicando na **Lupa** poderemos ver o "Resumo" onde é possivel filtrar um resultado e até mesmo ver as plataformas setadas anteriormente, tudo isso atravéz do **Dialog FrameWork** do **Primefaces**.
 
 # Relação de imagens  
-    Foi implementada uma API de busca o "Web Search API" , essa API faz a busca de imagens baseada no nome inserido na coluna da tabela, na qual fica localizada na página de dialogView.xhtml, ou seja, ao cadastrarmos o game a API entra em ação buscando   
+ Foi implementada uma API de busca o **"Web Search API"** , essa API faz a busca de imagens baseada no nome inserido na coluna da tabela, na qual fica localizada na página de dialogView.xhtml, ou seja, ao cadastrarmos o game a API entra em ação buscando   
  o nome inserido e automaticamente retornando um array de resultados onde precisaremos de algum index, que no meu caso eu utilizei o index 0 (zero) e pegando a URL para montar o PATH da imagem, lembrando que ao inserirmos o nome do game, em muitos casos temos  
- o espaçamento entre palavras, o que quebrará o link e consequentemente a busca realizada, retornando um erro 500, para evitar isso deverá ser inserido um *replaceAll()" ao path original, transformando a nome que virá do input nomeGame para valores no link, esses valores são a conversão de espaços vazios   >>" "<<  
- para "%20%" que representa um espaçamento na tabela ASCII.
-   Essa API por ser gratuita possui um limite de 100 requisições por dia, caso esse limite seja atingido a pagina dialogView.xhtml será retornada com um erro 500, para evitar isso foi inserida uma condição que traz uma imagem padrão do Google Drive, essa imagem possui a frase "IMAGEM TEMPORARIAMENTE INDISPONIVEL"  
-   assim temos o acesso normal a dialogView.xhtml e podemos fazer as consultas normalmente.
+ o espaçamento entre palavras, o que quebrará o link e consequentemente a busca realizada, retornando um erro 500, para evitar isso deverá ser inserido um **"replaceAll()"** ao path original, transformando a nome que virá do input nomeGame para valores no link, esses valores são a conversão de espaços vazios   >>" "<<  
+ para **"%20%"** que representa um espaçamento na tabela ASCII.
+ Essa API por ser gratuita possui um limite de 100 requisições por dia, caso esse limite seja atingido a página dialogView.xhtml será retornada com um erro 500, para evitar isso foi inserida uma condição que traz uma imagem padrão do Google Drive, essa imagem possui a frase "IMAGEM TEMPORARIAMENTE INDISPONIVEL"  
+ assim temos o acesso normal a dialogView.xhtml e podemos fazer as consultas normalmente.
 
 ► Qualquer dúvida é só entrar em contato via E-Mail **delsonsaint@hotmail.com** .  
 
