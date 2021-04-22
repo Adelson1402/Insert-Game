@@ -32,9 +32,10 @@ public class GamesModel implements Serializable, GameRepository {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="games", fetch=FetchType.EAGER)
 	private List<PlataformaModel> plataformas = new ArrayList<PlataformaModel>();
 	
-	
 	private String desenvolvedora;
-
+	
+	
+	
 	public Long getId() {
 		return id;
 	}
@@ -75,6 +76,10 @@ public class GamesModel implements Serializable, GameRepository {
 	public void setDesenvolvedora(String desenvolvedora) {
 		this.desenvolvedora = desenvolvedora;
 	}
+
+	
+	
+	
 	
 	
 

@@ -47,7 +47,9 @@
     </p:column> 
     
     <p:column headerText="Deletar">
-     <p:commandButton icon="pi pi-ban" action="#{gameMB.excluirPlataforma(p)}" update="pTable"/>
+     <p:commandButton icon="pi pi-ban" action="#{gameMB.excluirPlataforma(p)}" update="pTable">
+       <f:ajax rendered="pTable" process="@this"/>
+     </p:commandButton>
     </p:column> 
   </p:dataTable>
   

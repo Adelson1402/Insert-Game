@@ -1,6 +1,11 @@
 package com.crud_jsf.managedBeans.controllers;
 
+import java.io.IOException;
 import java.io.Serializable;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -13,7 +18,12 @@ import com.crud_jsf.managedBeans.messagesMB.MessagesStruct;
 import com.crud_jsf.managedBeans.services.GameService;
 import com.crud_jsf.managedBeans.services.PlataformaService;
 import com.crud_jsf.model.GamesModel;
+import com.crud_jsf.model.ImagePath;
 import com.crud_jsf.model.PlataformaModel;
+import com.crud_jsf.model.Value;
+import com.google.gson.Gson;
+import com.sun.jersey.api.client.Client;
+import com.sun.jersey.api.client.WebResource.Builder;
 
 
 
@@ -35,6 +45,9 @@ public class GamesMB implements Serializable{
 	
 	private List<String> consoles;
 	
+	private ImageApi imageApi = new ImageApi();
+	
+	
 	@Inject
 	private PlataformaService plataformaService;	
 	
@@ -54,12 +67,16 @@ public class GamesMB implements Serializable{
 		gamesList = gameService.findAll();
 		plataforms = plataformaService.findAll();
 	
+	
 		
 	}
+	
+	
 	
 	public void adicionar() {
 	
 		System.out.println(plataformas);
+		
 		try {
 		
 		  System.out.println("esse é um teste "+game.getPlataformas());
@@ -109,6 +126,10 @@ public class GamesMB implements Serializable{
 		plataformaService.delete(plataformaModel);
 	}
 	
+	public String getImage(String imageName) throws IOException, InterruptedException {
+		
+		return imageApi.getImage(imageName);
+	}
 	
 	
 	public String getFindString() {

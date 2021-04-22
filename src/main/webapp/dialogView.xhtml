@@ -31,6 +31,9 @@ font-size: 14px;
 				  rowsPerPageTemplate="5,10,{ShowAll|'TODOS'}" stripedRows="true" autoUpdate="true" stickyTopAt=".layout-topbar" stickyHeader="true">
 				  
 				
+ <p:column headerText="Imagem Relacionada">
+   <p:graphicImage  value="#{gameMB.getImage(g.nomeGame)}" style="width:180px; heigth: 250px;"/>
+ </p:column>
  <p:column headerText="Nome">
    <p:outputLabel  value="#{g.nomeGame}"/>
  </p:column>
