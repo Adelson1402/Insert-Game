@@ -9,6 +9,7 @@
 <p:growl id="msg" autoUpdate="true" />
 
 <h:body>
+
 	<p:panel id="painel" header="INSERT GAME">
 		<h:form id="form">
 
@@ -69,8 +70,8 @@
 	<p:commandButton icon="pi pi-search" action="#{dialog.dialogVieww}"
 		styleClass="p-mr-2" process="@this" />
 
-	<p:dataTable id="labelBusca" value="#{gameMB.gamesList}" var="g" rows="5"
-		border="1" paginator="true"
+	<p:dataTable id="labelBusca" value="#{gameMB.gamesList}" var="g"
+		rows="5" border="1" paginator="true"
 		paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 		currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} Resultados"
 		rowsPerPageTemplate="5,10,{ShowAll|'TODOS'}" stripedRows="true">
@@ -91,7 +92,15 @@
 			<p:commandButton icon="pi pi-trash" action="#{gameMB.remove}"
 				update="labelBusca msg" process="@this">
 				<f:setPropertyActionListener value="#{g}" target="#{gameMB.game}" />
+				<p:confirm type="popup" header="confirmação"
+					message="Deseja excluir esse game?" icon="pi pi-times-circle" />
 			</p:commandButton>
+			<p:confirmPopup global="true" id="confirmDialog">
+				<p:commandButton value="Não" type="button"
+					styleClass="ui-confirm-popup-no ui-button-flat" />
+				<p:commandButton value="Sim" type="button"
+					styleClass="ui-confirm-popup-yes" />
+			</p:confirmPopup>
 		</p:column>
 
 		<p:column headerText="Editar">

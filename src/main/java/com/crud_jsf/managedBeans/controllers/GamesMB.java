@@ -2,31 +2,24 @@ package com.crud_jsf.managedBeans.controllers;
 
 import java.io.IOException;
 import java.io.Serializable;
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
+
 import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-
 import com.crud_jsf.managedBeans.messagesMB.Exceptions;
 import com.crud_jsf.managedBeans.messagesMB.MessagesStruct;
 import com.crud_jsf.managedBeans.services.GameService;
+import com.crud_jsf.managedBeans.services.ImageApi;
 import com.crud_jsf.managedBeans.services.PlataformaService;
 import com.crud_jsf.model.GamesModel;
-import com.crud_jsf.model.ImagePath;
 import com.crud_jsf.model.PlataformaModel;
-import com.crud_jsf.model.Value;
-import com.google.gson.Gson;
-import com.sun.jersey.api.client.Client;
-import com.sun.jersey.api.client.WebResource.Builder;
 
 
 
+//http://localhost:8080/crud-jsf/game.xhtml  << acesso a pagina
 @Named(value="gameMB")
 @ViewScoped
 public class GamesMB implements Serializable{
